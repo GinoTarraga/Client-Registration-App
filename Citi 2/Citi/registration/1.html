@@ -115,6 +115,8 @@
 	color: rgb(0,0,0);
 }
 
+
+
 </style>
 <!-- End inline CSS -->
 
@@ -152,16 +154,50 @@
        //Example of JSON object being sent from viewController:
        //clientInfo = ["agentName": "gino"] as [String:Any]
        //parse JSON object
-       var obj = JSON.parse(object);
-       // get value from dictionary and print in id
-       document.getElementById("aName").value = obj.agentName;
-       document.getElementById("moveInDate").value = obj.moveInDate;
-       
-      //you know what this is, dont know how to explain it
-       //obj.budget = new Date(obj.budget);
-       //document.getElementById("aName").value = obj.agent;
-       //document.getElementById("budget").value = obj.budget;
-       //return temp;
+        var obj = JSON.parse(object);
+        document.getElementById("budget").value = obj.budget;
+        document.getElementById("agentName").value = obj.agentName;
+        //check if Json object has information for 2 clients or 1
+        if (obj.key == 1){
+           //parse json dictionary
+           document.getElementById("clientName1").value = obj.client1Name;
+           document.getElementById("clientAddress1").value = obj.client1Address;
+           document.getElementById("cityClient1").value = obj.client1City;
+           document.getElementById("stateClient1").value = obj.client1State;
+           document.getElementById("cellClient1").value = obj.client1CellPhone;
+           document.getElementById("emailClient1").value = obj.client1Email;
+           document.getElementById("employerClient1").value = obj.client1Employer;
+           document.getElementById("workAddressClient1").value = obj.client1EmployerAddress;
+           document.getElementById("positionClient1").value = obj.client1Position;
+           document.getElementById("incomeClient1").value = obj.client1Income;
+           document.getElementById("moveInDate").value = obj.client1MoveInDate;
+        } else {
+        
+            document.getElementById("clientName1").value = obj.client1Name;
+            document.getElementById("clientAddress1").value = obj.client1Address;
+            document.getElementById("cityClient1").value = obj.client1City;
+            document.getElementById("stateClient1").value = obj.client1State;
+            document.getElementById("cellClient1").value = obj.client1CellPhone;
+            document.getElementById("emailClient1").value = obj.client1Email;
+            document.getElementById("employerClient1").value = obj.client1Employer;
+            document.getElementById("workAddressClient1").value = obj.client1EmployerAddress;
+            document.getElementById("positionClient1").value = obj.client1Position;
+            document.getElementById("incomeClient1").value = obj.client1Income;
+            document.getElementById("moveInDate").value = obj.client1MoveInDate;
+            
+            //client 2 information
+            
+            document.getElementById("clientName2").value = obj.client2Name;
+            document.getElementById("clientAddress2").value = obj.client2Address;
+            document.getElementById("cityClient2").value = obj.client2City;
+            document.getElementById("stateClient2").value = obj.client2State;
+            document.getElementById("cellClient2").value = obj.client2CellPhone;
+            document.getElementById("emailClient2").value = obj.client2Email;
+            document.getElementById("employerClient2").value = obj.client2Employer;
+            document.getElementById("workAddressClient2").value = obj.client2EmployerAddress;
+            document.getElementById("positionClient2").value = obj.client2Position;
+            document.getElementById("incomeClient2").value = obj.client2Income;
+        }
    }
    
 </script>
@@ -178,41 +214,39 @@
 <div id="t3_1" class="t s2_1">Citihabitats.com</div>
 <div id="t4_1" class="t s3_1">CLIENT REGISTRATION </div>
 <div id="t5_1" class="t s4_1">Date: ___________ </div>
-<div id="t6_1" class="t s4_1">Agent:<input type='text' id='aName' style="width:730px; FONT-SIZE: 73.3px; FONT-FAMILY: TimesNewRomanPSMT_9; color: rgb(0,0,0); border: 0;
-    outline: 0; background: transparent; border-bottom: 1px solid black;"/><!--________________--></div>
-<div id="t7_1" class="t s4_1">Budget:<input type="text" id="budget" style="width:450px; FONT-SIZE: 67.5px; FONT-FAMILY: Georgia_k; color: rgb(0,0,0); border: white; border: 0;
-    outline: 0; background: transparent; border-bottom: 1px solid black;"/><!--__________ -->  Appointment: ___________</div>
-<div id="t8_1" class="t s4_1">Apartment size: <input type="text" id="apartmentSize" style="width:1150px; FONT-SIZE: 73.3px; FONT-FAMILY: Georgia_j; color: rgb(0,0,0); border: white; border: 0; outline: 0; background: transparent; border-bottom: 1px solid black;"/><!--______________--></div>
+<div id="t6_1" class="t s4_1">Agent:<input type='text' id='agentName' style="width:730px; FONT-SIZE: 60px; FONT-FAMILY: TimesNewRomanPSMT_9; color: rgb(0,0,0); border: 0; outline: 0; background: transparent; border-bottom: 1px solid black; padding-bottom: 4px;"/><!--________________--></div>
+<div id="t7_1" class="t s4_1">Budget:<input type="text" id="budget" style="width:450px; FONT-SIZE: 60px; FONT-FAMILY: TimesNewRomanPSMT_9; ccolor: rgb(0,0,0); border: 0; outline: 0; background: transparent; border-bottom: 1px solid black; padding-bottom: 4px;"/><!--__________ -->  Appointment: ___________</div>
+<div id="t8_1" class="t s4_1">Apartment size: <input type="text" id="apartmentSize" style="width:1150px; FONT-SIZE: 60px; FONT-FAMILY: TimesNewRomanPSMT_9; color: rgb(0,0,0); border: 0; outline: 0; background: transparent; border-bottom: 1px solid black; padding-bottom: 4px;"/><!--______________--></div>
 <div id="t9_1" class="t s5_1">Welcome to Citi Habitats. Thank you for providing us with the opportunity to find your new home. We look forward to </div>
 <div id="ta_1" class="t s5_1">working with you. Completing the information below will ensure that your apartment search goes as smoothly as possible.</div>
-<div id="tb_1" class,="t s3_1">CLIENT 1 </div>
+<div id="tb_1" class="t s3_1">CLIENT 1 </div>
 <div id="tc_1" class="t s3_1">Client 2</div>
-<div id="td_1" class="t s4_1">Name: <input type="text" id="clientName1" style="width:1350px; FONT-SIZE: 73.3px; FONT-FAMILY: Georgia_j; color: rgb(0,0,0); border: white; border: 0; outline: 0; background: transparent; border-bottom: 1px solid black;"><!--_____________________________--></div>
-<div id="te_1" class="t s4_1">Address: <input type="text" id="clientAddress1" style="width:900px; FONT-SIZE: 73.3px; FONT-FAMILY: Georgia_j; color: rgb(0,0,0); border: white; border: 0; outline: 0; background: transparent; border-bottom: 1px solid black;"><!--___________________--> Apt: <input type="text" id="clientApt1" style="width:220px; FONT-SIZE: 73.3px; FONT-FAMILY: Georgia_j; color: rgb(0,0,0); border: white; border: 0; outline: 0; background: transparent; border-bottom: 1px solid black;"></div>
-<div id="tf_1" class="t s4_1">City:<input type="text" id="cityClient1" style="width:625px; FONT-SIZE: 73.3px; FONT-FAMILY: Georgia_j; color: rgb(0,0,0); border: white; border: 0; outline: 0; background: transparent; border-bottom: 1px solid black;"> State:<input type="text" id="stateClient1" style="width:180px; FONT-SIZE: 73.3px; FONT-FAMILY: Georgia_j; color: rgb(0,0,0); border: white; border: 0; outline: 0; background: transparent; border-bottom: 1px solid black;"><!--____--> Zip:______</div>
+<div id="td_1" class="t s4_1">Name: <input type="text" id="clientName1" style="width:1300px; FONT-SIZE: 73.3px; FONT-FAMILY: TimesNewRomanPSMT_9; color: rgb(0,0,0); border: 0; outline: 0; background: transparent; border-bottom: 1px solid black; padding-bottom: 4px;"><!--_____________________________--></div>
+<div id="te_1" class="t s4_1">Address: <input type="text" id="clientAddress1" style="width:825px; FONT-SIZE: 73.3px; FONT-FAMILY: TimesNewRomanPSMT_9; color: rgb(0,0,0); border: 0; outline: 0; background: transparent; border-bottom: 1px solid black; padding-bottom: 4px;"><!--___________________--> Apt: <input type="text" id="clientApt1" style="width:200px; FONT-FAMILY: TimesNewRomanPSMT_9; color: rgb(0,0,0); border: 0; outline: 0; background: transparent; border-bottom: 1px solid black; padding-bottom: 4px;"></div>
+<div id="tf_1" class="t s4_1">City:<input type="text" id="cityClient1" style="width:600px; FONT-SIZE: 73.3px; FONT-FAMILY: TimesNewRomanPSMT_9; color: rgb(0,0,0); border: 0; outline: 0; background: transparent; border-bottom: 1px solid black; padding-bottom: 4px;"> State:<input type="text" id="stateClient1" style="width:80px; FONT-SIZE: 73.3px; FONT-FAMILY: TimesNewRomanPSMT_9; color: rgb(0,0,0); border: 0; outline: 0; background: transparent; border-bottom: 1px solid black; padding-bottom: 4px;"><!--____--> Zip:_____</div>
 <div id="tg_1" class="t s4_1">Telephone (home): </div>
 <div id="th_1" class="t s4_1">____________________</div>
-<div id="ti_1" class="t s4_1">Telephone (cell):<input type="text" id="cellClient1" style="width:1050px; FONT-SIZE: 73.3px; FONT-FAMILY: Georgia_j; color: rgb(0,0,0); border: white; border: 0; outline: 0; background: transparent; border-bottom: 1px solid black;"><!--______________________--></div>
+<div id="ti_1" class="t s4_1">Telephone (cell):<input type="text" id="cellClient1" style="width:980px; FONT-SIZE: 73.3px; FONT-FAMILY: TimesNewRomanPSMT_9; color: rgb(0,0,0); border: 0; outline: 0; background: transparent; border-bottom: 1px solid black; padding-bottom: 4px;"><!--______________________--></div>
 <div id="tj_1" class="t s4_1">Telephone (work): _____________________</div>
-<div id="tk_1" class="t s4_1">Email:<input type="text" id="emailClient1" style="width:1370px; FONT-SIZE: 73.3px; FONT-FAMILY: Georgia_j; color: rgb(0,0,0); border: white; border: 0; outline: 0; background: transparent; border-bottom: 1px solid black;">  <!--_____________________________--></div>
-<div id="tl_1" class="t s4_1">Employer:<input type="text" id="employerClient1" style="width:1250px; FONT-SIZE: 73.3px; FONT-FAMILY: Georgia_j; color: rgb(0,0,0); border: white; border: 0; outline: 0; background: transparent; border-bottom: 1px solid black;"></div>
+<div id="tk_1" class="t s4_1">Email:<input type="text" id="emailClient1" style="width:1325px; FONT-SIZE: 73.3px; FONT-FAMILY: TimesNewRomanPSMT_9; color: rgb(0,0,0); border: 0; outline: 0; background: transparent; border-bottom: 1px solid black; padding-bottom: 4px;">  <!--_____________________________--></div>
+<div id="tl_1" class="t s4_1">Employer:<input type="text" id="employerClient1" style="width:1200px; FONT-SIZE: 73.3px; FONT-FAMILY: TimesNewRomanPSMT_9; color: rgb(0,0,0); border: 0; outline: 0; background: transparent; border-bottom: 1px solid black; padding-bottom: 4px;"></div>
 <div id="tm_1" class="t s4_1"><!--__________________________--></div>
-<div id="tn_1" class="t s4_1">Address:<input type="text" id="workAddressClient1" style="width:1300px; FONT-SIZE: 73.3px; FONT-FAMILY: Georgia_j; color: rgb(0,0,0); border: white; border: 0; outline: 0; background: transparent; border-bottom: 1px solid black;"><!--____________________________--></div>
-<div id="to_1" class="t s4_1">Position:<input type="text" id="positionClient1" style="width:520px; FONT-SIZE: 73.3px; FONT-FAMILY: Georgia_j; color: rgb(0,0,0); border: white; border: 0; outline: 0; background: transparent; border-bottom: 1px solid black;"><!--___________--> Annual income:<input type="text" id="incomeClient1" style="width:250px; FONT-SIZE: 73.3px; FONT-FAMILY: Georgia_j; color: rgb(0,0,0); border: white; border: 0; outline: 0; background: transparent; border-bottom: 1px solid black;"> <!--_____--></div>
+<div id="tn_1" class="t s4_1">Address:<input type="text" id="workAddressClient1" style="width:1280px; FONT-SIZE: 73.3px; FONT-FAMILY: TimesNewRomanPSMT_9; color: rgb(0,0,0); border: 0; outline: 0; background: transparent; border-bottom: 1px solid black; padding-bottom: 4px;"><!--____________________________--></div>
+<div id="to_1" class="t s4_1">Position:<input type="text" id="positionClient1" style="width:500px; FONT-SIZE: 73.3px; FONT-FAMILY: TimesNewRomanPSMT_9; color: rgb(0,0,0); border: 0; outline: 0; background: transparent; border-bottom: 1px solid black; padding-bottom: 4px;"><!--___________--> Annual income:<input type="text" id="incomeClient1" style="width:160px; FONT-SIZE: 73.3px; FONT-FAMILY: TimesNewRomanPSMT_9; color: rgb(0,0,0); border: 0; outline: 0; background: transparent; border-bottom: 1px solid black; padding-bottom: 4px;"> <!--_____--></div>
 <div id="tp_1" class="t s4_1">Current Landlord:_____________________</div>
-<div id="tq_1" class="t s4_1">Name:<input type="text" id="clientName2" style="width:1400px; FONT-SIZE: 73.3px; FONT-FAMILY: Georgia_j; color: rgb(0,0,0); border: white; border: 0; outline: 0; background: transparent; border-bottom: 1px solid black;"><!--______________________________--></div>
-<div id="tr_1" class="t s4_1">Address:<input type="text" id="clientAddress2" style="width:900px; FONT-SIZE: 73.3px; FONT-FAMILY: Georgia_j; color: rgb(0,0,0); border: white; border: 0; outline: 0; background: transparent; border-bottom: 1px solid black;"> <!--__________________--> Apt:<input type="text" id="clientApt2" style="width:250px; FONT-SIZE: 73.3px; FONT-FAMILY: Georgia_j; color: rgb(0,0,0); border: white; border: 0; outline: 0; background: transparent; border-bottom: 1px solid black;"><!--_______--></div>
-<div id="ts_1" class="t s4_1">City:<input type="text" id="cityClient2" style="width:625px; FONT-SIZE: 73.3px; FONT-FAMILY: Georgia_j; color: rgb(0,0,0); border: white; border: 0; outline: 0; background: transparent; border-bottom: 1px solid black;"><!--____________--> State:<input type="text" id="stateClient2" style="width:180px; FONT-SIZE: 73.3px; FONT-FAMILY: Georgia_j; color: rgb(0,0,0); border: white; border: 0; outline: 0; background: transparent; border-bottom: 1px solid black;"><!--____--> Zip:______</div>
-<div id="tt_1" class="t s4_1">Telephone (home): _____________________</div>
-<div id="tu_1" class="t s4_1">Telephone (cell):<input type="text" id="cellClient2" style="width:1080px; FONT-SIZE: 73.3px; FONT-FAMILY: Georgia_j; color: rgb(0,0,0); border: white; border: 0; outline: 0; background: transparent; border-bottom: 1px solid black;"><!--_______________________--></div>
-<div id="tv_1" class="t s4_1">Telephone (work):______________________</div>
-<div id="tw_1" class="t s4_1">Email:<input type="text" id="emailClient2" style="width:1400px; FONT-SIZE: 73.3px; FONT-FAMILY: Georgia_j; color: rgb(0,0,0); border: white; border: 0; outline: 0; background: transparent; border-bottom: 1px solid black;"> <!--______________________________--></div>
-<div id="tx_1" class="t s4_1">Employer:<input type="text" id="employerClient2" style="width:1280px; FONT-SIZE: 73.3px; FONT-FAMILY: Georgia_j; color: rgb(0,0,0); border: white; border: 0; outline: 0; background: transparent; border-bottom: 1px solid black;"> <!--___________________________--></div>
-<div id="ty_1" class="t s4_1">Address:<input type="text" id="workAddressClient2" style="width:1330px; FONT-SIZE: 73.3px; FONT-FAMILY: Georgia_j; color: rgb(0,0,0); border: white; border: 0; outline: 0; background: transparent; border-bottom: 1px solid black;"> <!--____________________________--></div>
-<div id="tz_1" class="t s4_1">Position:<input type="text" id="positionClient2" style="width:550px; FONT-SIZE: 73.3px; FONT-FAMILY: Georgia_j; color: rgb(0,0,0); border: white; border: 0; outline: 0; background: transparent; border-bottom: 1px solid black;"><!--___________--> Annual income:<input type="text" id="incomeClient2" style="width:250px; FONT-SIZE: 73.3px; FONT-FAMILY: Georgia_j; color: rgb(0,0,0); border: white; border: 0; outline: 0; background: transparent; border-bottom: 1px solid black;"><!--______--></div>
+<div id="tq_1" class="t s4_1">Name:<input type="text" id="clientName2" style="width:1300px; FONT-SIZE: 73.3px; FONT-FAMILY: TimesNewRomanPSMT_9; color: rgb(0,0,0); border: 0; outline: 0; background: transparent; border-bottom: 1px solid black; padding-bottom: 4px;"><!--______________________________--></div>
+<div id="tr_1" class="t s4_1">Address:<input type="text" id="clientAddress2" style="width:825px; FONT-SIZE: 73.3px; FONT-FAMILY: Georgia_j; color: rgb(0,0,0); border: white; border: 0; outline: 0; background: transparent; border-bottom: 1px solid black;"> <!--__________________--> Apt:<input type="text" id="clientApt2" style="width:200px; FONT-SIZE: 73.3px; FONT-FAMILY: Georgia_j; color: rgb(0,0,0); border: white; border: 0; outline: 0; background: transparent; border-bottom: 1px solid black;"><!--_______--></div>
+<div id="ts_1" class="t s4_1">City:<input type="text" id="cityClient2" style="width:600px; FONT-SIZE: 73.3px; FONT-FAMILY: TimesNewRomanPSMT_9; color: rgb(0,0,0); border: 0; outline: 0; background: transparent; border-bottom: 1px solid black; padding-bottom: 4px;"><!--____________--> State:<input type="text" id="stateClient2" style="width:80px; FONT-SIZE: 73.3px; FONT-FAMILY: Georgia_j; color: rgb(0,0,0); border: white; border: 0; outline: 0; background: transparent; border-bottom: 1px solid black;"><!--____--> Zip:______</div>
+<div id="tt_1" class="t s4_1">Telephone (home): ____________________</div>
+<div id="tu_1" class="t s4_1">Telephone (cell):<input type="text" id="cellClient2" style="width:980px; FONT-SIZE: 73.3px; FONT-FAMILY: TimesNewRomanPSMT_9; color: rgb(0,0,0); border: 0; outline: 0; background: transparent; border-bottom: 1px solid black; padding-bottom: 4px;"><!--_______________________--></div>
+<div id="tv_1" class="t s4_1">Telephone (work):_____________________</div>
+<div id="tw_1" class="t s4_1">Email:<input type="text" id="emailClient2" style="width:1325px; FONT-SIZE: 73.3px; FONT-FAMILY: TimesNewRomanPSMT_9; color: rgb(0,0,0); border: 0; outline: 0; background: transparent; border-bottom: 1px solid black; padding-bottom: 4px;"> <!--______________________________--></div>
+<div id="tx_1" class="t s4_1">Employer:<input type="text" id="employerClient2" style="width:1200px; FONT-SIZE: 73.3px; FONT-FAMILY: TimesNewRomanPSMT_9; color: rgb(0,0,0); border: 0; outline: 0; background: transparent; border-bottom: 1px solid black; padding-bottom: 4px;"/><!--___________________________--></div>
+<div id="ty_1" class="t s4_1">Address:<input type="text" id="workAddressClient2" style="width:1280px; FONT-SIZE: 73.3px; FONT-FAMILY: Georgia_j; color: rgb(0,0,0); border: white; border: 0; outline: 0; background: transparent; border-bottom: 1px solid black;"> <!--____________________________--></div>
+<div id="tz_1" class="t s4_1">Position:<input type="text" id="positionClient2" style="width:500px; FONT-SIZE: 73.3px; FONT-FAMILY: Georgia_j; color: rgb(0,0,0); border: white; border: 0; outline: 0; background: transparent; border-bottom: 1px solid black;"><!--___________--> Annual income:<input type="text" id="incomeClient2" style="width:160px; FONT-SIZE: 73.3px; FONT-FAMILY: TimesNewRomanPSMT_9; color: rgb(0,0,0); border: 0; outline: 0; background: transparent; border-bottom: 1px solid black; padding-bottom: 4px;"><!--______--></div>
 <div id="t10_1" class="t s4_1">Current Landlord:______________________</div>
-<div id="t11_1" class="t s6_1">Move-in date:<input type="text" id="moveInDate" style="width:550px;  FONT-SIZE: 73.3px; FONT-FAMILY: Georgia_k; color: rgb(0,0,0);border: white; border: 0; outline: 0; background: transparent; border-bottom: 1px solid black;"> <!--___________--> </div>
-<div id="t12_1" class="t s6_1">Lease expiration date: <input type="text" id="leaseExpirationDate" style="width:470px;  FONT-SIZE: 73.3px; FONT-FAMILY: Georgia_k; color: rgb(0,0,0);border: white; border: 0; outline: 0; background: transparent; border-bottom: 1px solid black;"><!--__________--> Number of people: __________ </div>
+<div id="t11_1" class="t s6_1">Move-in date:<input type="text" id="moveInDate" style="width:500px; FONT-SIZE: 73.3px; FONT-FAMILY: TimesNewRomanPSMT_9; color: rgb(0,0,0); border: 0; outline: 0; background: transparent; border-bottom: 1px solid black; padding-bottom: 4px;"> <!--___________--> </div>
+<div id="t12_1" class="t s6_1">Lease expiration date: <input type="text" id="leaseExpirationDate" style="width:425px;  FONT-SIZE: 73.3px; FONT-FAMILY: TimesNewRomanPSMT_9; color: rgb(0,0,0); border: 0; outline: 0; background: transparent; border-bottom: 1px solid black; padding-bottom: 4px;"><!--__________--> Number of people: _________</div>
 <div id="t13_1" class="t s6_1">What apartments have you seen?________________________________________________ </div>
 <div id="t14_1" class="t s6_1">How did you hear about us? ________________ </div>
 <div id="t15_1" class="t s6_1">Do you have any pets?___________________ </div>
